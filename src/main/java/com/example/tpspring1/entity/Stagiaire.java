@@ -2,12 +2,10 @@ package com.example.tpspring1.entity;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 @Entity
+@DiscriminatorValue("Stagiaire")
 public class Stagiaire extends Personne{
     @NotNull
     @Column(name = "dateNaissance")

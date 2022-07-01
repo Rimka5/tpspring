@@ -3,9 +3,11 @@ package com.example.tpspring1.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.Date;
 @Entity
+@DiscriminatorValue("Formateur")
 public class Formateur extends Personne{
     @NotNull
     @Column(name = "dateEmbauche")
