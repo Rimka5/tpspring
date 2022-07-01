@@ -2,12 +2,9 @@ package com.example.tpspring1.entity;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
-
+@Entity
 public class Adresse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +18,16 @@ public class Adresse {
     @Size(max=50)
     private String complement;
     @NotNull
-    @Column(name = "complement")
+    @Column(name = "zipCode")
     @Size(max=50)
     private String zipCode;
+    @Column(name = "ville")
     private String ville;
+    @Column(name = "pays")
     private String pays;
+
+    public Adresse() {
+    }
 
     public Adresse(long id, String rue, String complement, String zipCode, String ville, String pays) {
         this.id = id;

@@ -3,15 +3,20 @@ package com.example.tpspring1.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.Date;
-
+@Entity
 public class Stagiaire extends Personne{
     @NotNull
     @Column(name = "dateNaissance")
     private Date dateNaissance;
-    @OneToMany
+    @ManyToOne
     private Formateur formateur;
+
+    public Stagiaire() {
+    }
 
     public Stagiaire(long id, String type, String civilite, String nom, String prenom, String email, String idAdresse) {
         super(id, type, civilite, nom, prenom, email, idAdresse);

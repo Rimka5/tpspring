@@ -27,7 +27,7 @@ public abstract class Personne {
     @Size(max=50)
     private String prenom;
     @NotNull
-    @Column(name = "prenom")
+    @Column(name = "email")
     @Size(max=50)
     private String email;
     @NotNull

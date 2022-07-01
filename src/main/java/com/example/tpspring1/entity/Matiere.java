@@ -2,12 +2,9 @@ package com.example.tpspring1.entity;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
-
+@Entity
 public class Matiere {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +20,9 @@ public class Matiere {
     @Column(name = "difficulté")
     @Size(max=50)
     private String difficulte;
+
+    public Matiere() {
+    }
 
     public Matiere(long id, String nom, int duree, String difficulte) {
         this.id = id;
