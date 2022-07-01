@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="TYPE_PERSONNE")
 public abstract class Personne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

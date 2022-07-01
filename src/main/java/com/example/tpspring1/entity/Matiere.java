@@ -4,6 +4,8 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
+
 @Entity
 public class Matiere {
     @Id
@@ -20,6 +22,9 @@ public class Matiere {
     @Column(name = "difficulté")
     @Size(max=50)
     private String difficulte;
+
+    @ManyToMany@JoinTable(name="competence",uniqueConstraints=@UniqueConstraint(columnNames={ "FORMATEUR_ID", "MATIERE_ID" }),joinColumns=@JoinColumn(name="FORMATEUR_ID", referencedColumnName="id"),inverseJoinColumns=@JoinColumn(name="MATIERE_ID", referencedColumnName="id"))
+    private List<Formateur> formateurs;
 
     public Matiere() {
     }
