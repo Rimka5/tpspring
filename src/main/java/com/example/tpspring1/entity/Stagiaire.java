@@ -18,11 +18,11 @@ public class Stagiaire extends Personne{
     public Stagiaire() {
     }
 
-    public Stagiaire(long id, String type, String civilite, String nom, String prenom, String email, String idAdresse) {
+    public Stagiaire(long id, String type, String civilite, String nom, String prenom, String email, Adresse idAdresse) {
         super(id, type, civilite, nom, prenom, email, idAdresse);
     }
 
-    public Stagiaire(long id, String type, String civilite, String nom, String prenom, String email, String idAdresse, Date dateNaissance, Formateur formateur) {
+    public Stagiaire(long id, String type, String civilite, String nom, String prenom, String email, Adresse idAdresse, Date dateNaissance, Formateur formateur) {
         super(id, type, civilite, nom, prenom, email, idAdresse);
         this.dateNaissance = dateNaissance;
         this.formateur = formateur;

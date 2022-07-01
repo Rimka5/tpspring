@@ -19,14 +19,14 @@ public class Formateur extends Personne{
     public Formateur() {
     }
 
-    public Formateur(long id, String type, String civilite, String nom, String prenom, String email, String idAdresse, Date dateEmbauche, int exp, boolean interne) {
+    public Formateur(long id, String type, String civilite, String nom, String prenom, String email, Adresse idAdresse, Date dateEmbauche, int exp, boolean interne) {
         super(id, type, civilite, nom, prenom, email, idAdresse);
         this.dateEmbauche = dateEmbauche;
         this.exp = exp;
         this.interne = interne;
     }
 
-    public Formateur(long id, String type, String civilite, String nom, String prenom, String email, String idAdresse) {
+    public Formateur(long id, String type, String civilite, String nom, String prenom, String email, Adresse idAdresse) {
         super(id, type, civilite, nom, prenom, email, idAdresse);
     }
 
