@@ -33,11 +33,10 @@ public abstract class Personne {
     @Size(max=50)
     private String email;
     @NotNull
-    @Column(name = "adresse")
-    @Size(max=50)
-    private String adresse;
+    @ManyToOne
+    private Adresse adresse;
 
-    public Personne(long id, String type, String civilite, String nom, String prenom, String email, String idAdresse) {
+    public Personne(long id, String type, String civilite, String nom, String prenom, String email, Adresse idAdresse) {
         this.id = id;
         this.type = type;
         this.civilite = civilite;
@@ -99,11 +98,11 @@ public abstract class Personne {
         this.email = email;
     }
 
-    public String getAdresse() {
+    public Adresse getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(String idAdresse) {
+    public void setAdresse(Adresse idAdresse) {
         this.adresse = idAdresse;
     }
 }
